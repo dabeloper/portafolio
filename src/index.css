@@ -9,6 +9,9 @@ i {
 }
 
 /*********** PopUp - Anvil ***********/
+#popup-container {
+  width: 100%;
+}
 
 #overlay {
   position: fixed;
@@ -18,7 +21,7 @@ i {
   background:rgba(254, 254, 254, 0.85);
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 99999;
   visibility: hidden;
   transition: all 1s ease;
 }
@@ -35,13 +38,11 @@ i {
   */
   margin-left: -250px; /*Half the value of width to center div*/
   margin-top: -250px; /*Half the value of height to center div*/
-  z-index: -1;
+  z-index: 999999;
   visibility: hidden;
 }
-.show #popupclose {
-  position: fixed;
-}
 #popupclose {
+  position: absolute;
   float: right;
   right: 0px;
   padding: 10px;
@@ -329,9 +330,12 @@ z-index: 100;
 
 #popup-container .card {
   position: relative;
+  margin: auto 0;
+  left: 10%;
   background: #333;
-  width: 400px;
-  height: 75vh;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
   border-radius: 6px;
   padding: 2rem;
   color: #aaa;
@@ -363,7 +367,17 @@ z-index: 100;
 #popup-container .card__svg {
   position: absolute;
   left: 0;
-  top: 115px;
+  /*top: 115px;*/
+  top: 77px;
+}
+
+@media screen and (max-width: 480px) {
+  #popup {
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+  }
 }
 
 @keyframes LineFadeIn {

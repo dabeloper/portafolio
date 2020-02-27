@@ -51,7 +51,6 @@ class App extends Component {
   }
 
   goToFeature( f ) {
-    console.log(f);
     this.setState({control: 'show'});
     this.setState({feature: f});
   }

@@ -7,7 +7,7 @@ class Popup extends Component {
         super();
         this.onClose = this.onClose.bind(this);
         this.state = {
-            background : "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixid=eyJhcHBfaWQiOjEyMDd9",
+            background : "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixid=eyJhcHBfaWQiOjEyMDd9",
             images: [ 
                 "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixid=eyJhcHBfaWQiOjEyMDd9",
                 "https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixid=eyJhcHBfaWQiOjEyMDd9",
@@ -69,7 +69,7 @@ class Popup extends Component {
                         
                         <div className="card__content">
                             <h1 className="card__title"> { this.props.feature.title } </h1>
-                            <p> { this.props.feature.details } </p>
+                            <p> { this.props.feature.description } </p>
                         </div>
                     </div>
                 </div>
