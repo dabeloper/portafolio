@@ -1,0 +1,74 @@
+<li class="l-section section">
+  <div class="contact">
+
+    <div class="contact--lockup">
+      <div class="modal">
+        <div class="modal--information">
+          <p>{{ "pingMe.address" | translate }}</p>
+          <a  id="contact-card-email"
+              href="mailto:dabeloper@gmail.com" 
+              target="_blank"
+              (click)="analytics.trackContactLinkedinBtn()">
+              dabeloper&#64;gmail.com
+          </a>
+          <!-- <a href="tel:+148126287560">+48 12 628 75 60</a> -->
+        </div>
+        <ul class="modal--options">
+          <li>
+            <a  id="contact-card-linkedin"
+                href="https://linkedin.com/in/dabeloper"
+                target="_blank"
+                (click)="analytics.trackContactLinkedinBtn()">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a  id="contact-card-instagram"
+                href="https://instagram.com/dabeloper"
+                target="_blank"
+                (click)="analytics.trackContactIGBtn()">
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a  id="contact-card-facebook"
+                href="https://facebook.com/dabeloper"
+                target="_blank"
+                (click)="analytics.trackContactFBBtn()">
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a  id="contact-card-twitter"
+                href="https://twitter.com/dabeloper"
+                target="_blank"
+                (click)="analytics.trackContactXBtn()">
+              Twitter(X)
+            </a>
+          </li>
+          <li>
+            <a  id="contact-card-github"
+                href="https://github.com/dabeloper"
+                target="_blank"
+                (click)="analytics.trackContactGHBtn()">
+              GitHub
+            </a>
+          </li>
+          
+          <li>
+            <a  id="contact-card-contactme"
+                href="mailto:dabeloper@gmail.com"
+                target="_blank"
+                (click)="analytics.trackContactMeBtn()">
+              {{ "pingMe.contactMe" | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="map-container">
+      <app-map></app-map>
+    </div>
+  </div>
+</li>

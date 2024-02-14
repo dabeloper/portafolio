@@ -1,0 +1,29 @@
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo">
+    <img src="assets/img/logo.png" alt="dabeloper">
+    <p>DABELOPER</p>
+  </a>
+  <p class="device-notification--message">
+    {{ 'device-notification' | translate }}
+  </p>
+</div>
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <app-navbar [type]="navbarType.INNER"></app-navbar>
+        <ul class="l-main-content main-content">
+          <app-home></app-home>
+          <app-skills></app-skills>
+          <app-works></app-works>
+          <app-hire></app-hire>
+          <app-contact></app-contact>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <app-navbar [type]='navbarType.OUTER'></app-navbar>
+</div>
+
+<router-outlet></router-outlet>

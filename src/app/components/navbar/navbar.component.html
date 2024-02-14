@@ -1,0 +1,62 @@
+<ng-container *ngIf="type == navbarType.INNER; else outerCheck">
+    <header class="header">
+        <a class="header--logo" href="#">
+          <img src="assets/img/logo.png" alt="DABELOPER">
+          <p>{{ "copyright" | translate }}</p>
+        </a>
+        <div class="header--nav-toggle">
+          <span></span>
+        </div>
+    </header>
+    <nav class="l-side-nav">
+        <ul class="side-nav">
+            <li id="sidebar-home"
+                class="is-active"
+                (click)="analytics.trackSideBarHome()">
+                <span>{{ "navbar.home" | translate }}</span>
+            </li>
+            <li id="sidebar-skills"
+                (click)="analytics.trackSideBarSkills()">
+                <span>{{ "navbar.skills" | translate }}</span>
+            </li>
+            <li id="sidebar-works"
+                (click)="analytics.trackSideBarWorks()">
+                <span>{{ "navbar.works" | translate }}</span>
+            </li>
+            <li id="sidebar-check"
+                (click)="analytics.trackSideBarCheckList()">
+                <span>{{ "navbar.check" | translate }}</span>
+            </li>
+            <li id="sidebar-pingMe"
+                (click)="analytics.trackSideBarContact()">
+                <span>{{ "navbar.pingMe" | translate }}</span>
+            </li>
+        </ul>
+    </nav>
+</ng-container>
+<ng-template #outerCheck>
+    <ul *ngIf="type == navbarType.OUTER"
+        class="outer-nav">
+        <li id="menu-home"
+            class="is-active"
+            (click)="analytics.trackMenuHome()">
+            {{ "navbar.home" | translate }}
+        </li>
+        <li id="menu-skills"
+            (click)="analytics.trackMenuSkills()">
+            {{ "navbar.skills" | translate }}
+        </li>
+        <li id="menu-works"
+            (click)="analytics.trackMenuWorks()">
+            {{ "navbar.works" | translate }}
+        </li>
+        <li id="menu-check"
+            (click)="analytics.trackMenuCheckList()">
+            {{ "navbar.check" | translate }}
+        </li>
+        <li id="menu-pingMe"
+            (click)="analytics.trackMenuContact()">
+            {{ "navbar.pingMe" | translate }}
+        </li>
+    </ul>
+</ng-template>

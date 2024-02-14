@@ -1,0 +1,8 @@
+#map {
+    height: 100vh;
+}
+
+:host ::ng-deep .leaflet-tile-pane {
+    -webkit-filter: grayscale(100%) invert(100%);
+    filter: grayscale(100%) invert(100%);
+}

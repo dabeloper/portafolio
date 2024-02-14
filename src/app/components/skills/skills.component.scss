@@ -1,0 +1,253 @@
+
+
+.skills {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 900px;
+    max-width: 75%;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 auto
+}
+
+@media (max-width: 1180px) {
+    .skills {
+        max-width:100%
+    }
+}
+
+.skills-banner {
+    position: relative;
+    height: 475px;
+}
+
+/*
+.skills-banner::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 200px;
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+    border: 5px solid #0f33ff;
+    border-right-color: transparent;
+    border-bottom-color: transparent
+}
+
+.skills-banner::after {
+    content: "";
+    position: absolute;
+    top: 75px;
+    left: 400px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: #0f33ff
+}
+*/
+
+.skills-banner h2 {
+    position: relative;
+    margin-top: 35px;
+    font-size: 68px;
+    font-weight: 900;
+    line-height: 1;
+    z-index: 1
+}
+
+/*
+.skills-banner h2::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 268px;
+    width: 30px;
+    height: 30px;
+    background-color: #0f33ff;
+    border-radius: 50%
+}
+
+.skills-banner h2::after {
+    content: "";
+    position: absolute;
+    top: 255px;
+    left: 255px;
+    width: 10px;
+    height: 10px;
+    background-color: #0f33ff
+}
+*/
+
+.skills-banner a {
+    padding: 5px 17px 5px 0;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: transparent
+}
+
+.skills-banner a:hover svg {
+    left: 10px
+}
+
+.skills-banner a svg {
+    position: relative;
+    left: 5px;
+    width: 15px;
+    fill: #fff;
+    -webkit-transition: left .2s ease-in-out;
+    transition: left .2s ease-in-out
+}
+
+.skills-banner img {
+    position: absolute;
+    bottom: -90px;
+    right: -12px;
+    top: 25px;
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0.25;
+}
+
+.skills-options {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 600px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.skills-options>a {
+    position: relative;
+    width: 150px;
+    height: 75px;
+    text-decoration: none;
+    color: #fff;
+    border: 10px solid #0f33ff;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+// .skills-options>a:nth-child(1) {
+//     background-image: url("../img/about-winners.jpg")
+// }
+
+// .skills-options>a:nth-child(2) {
+//     background-image: url("../img/about-philosophy.jpg")
+// }
+
+// .skills-options>a:nth-child(3) {
+//     background-image: url("../img/about-history.jpg")
+// }
+.skills-options>a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.skills-options>a:hover h3 {
+    bottom: -50px
+}
+
+.skills-options h3 {
+    position: absolute;
+    bottom: -38px;
+    left: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    -webkit-transition: bottom .2s ease-in-out,left .2s ease-in-out;
+    transition: bottom .2s ease-in-out,left .2s ease-in-out
+}
+
+@media (max-width: 767px) {
+    .skills-banner {
+        height:305px
+    }
+
+    .skills-banner::before {
+        top: 0;
+        left: 125px
+    }
+
+    .skills-banner::after {
+        top: 35px;
+        left: 260px
+    }
+
+    .skills-banner h2 {
+        margin-top: 10px;
+        font-size: 44px
+    }
+
+    .skills-banner h2::before {
+        top: 28px;
+        left: 168px
+    }
+
+    .skills-banner h2::after {
+        top: 163px;
+        left: 163px
+    }
+
+    .skills-banner img {
+        width: 315px
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-banner {
+        height:auto
+    }
+
+    .skills-banner::before {
+        left: 155px
+    }
+
+    .skills-banner::after {
+        left: 310px
+    }
+
+    .skills-banner h2 {
+        margin-top: 0;
+        font-size: 55px
+    }
+
+    .skills-banner h2::before {
+        top: 43px;
+        left: 214px
+    }
+
+    .skills-banner h2::after {
+        top: 205px;
+        left: 205px
+    }
+
+    .skills-banner img {
+        display: none
+    }
+
+    .skills-options {
+        width: 100px;
+        // display: none
+    }
+}
