@@ -1,4 +1,17 @@
-setTimeout( () => {
+
+var timerMin = 0;
+function fTmin() {
+    if ( ++timerMin > 60 ) return;
+    setTimeout( () => {
+        if ( !!document.getElementById("sidebar-home") ) {
+            fMin();
+        } else {
+            fTmin();
+        }
+    }, 1000);
+}
+    
+function fMin() {
     !function(t, e, i, n) {
     "use strict";
     function s(t, e, i) {
@@ -25,8 +38,8 @@ setTimeout( () => {
         var s = "DEPRECATED METHOD: " + i + "\n" + n + " AT \n";
         return function() {
             var i = new Error("get-stack-trace")
-              , n = i && i.stack ? i.stack.replace(/^[^\(]+?[\n$]/gm, "").replace(/^\s+at\s+/gm, "").replace(/^Object.<anonymous>\s*\(/gm, "{anonymous}()@") : "Unknown Stack Trace"
-              , r = t.console && (t.console.warn || t.console.log);
+            , n = i && i.stack ? i.stack.replace(/^[^\(]+?[\n$]/gm, "").replace(/^\s+at\s+/gm, "").replace(/^Object.<anonymous>\s*\(/gm, "{anonymous}()@") : "Unknown Stack Trace"
+            , r = t.console && (t.console.warn || t.console.log);
             return r && r.call(t.console, s, n),
             e.apply(this, arguments)
         }
@@ -133,9 +146,9 @@ setTimeout( () => {
     }
     function A(t, e, i) {
         var n = i.pointers.length
-          , s = i.changedPointers.length
-          , r = e & Pt && n - s === 0
-          , o = e & (Rt | Mt) && n - s === 0;
+        , s = i.changedPointers.length
+        , r = e & Pt && n - s === 0
+        , o = e & (Rt | Mt) && n - s === 0;
         i.isFirst = !!r,
         i.isFinal = !!o,
         r && (t.session = {}),
@@ -147,14 +160,14 @@ setTimeout( () => {
     }
     function D(t, e) {
         var i = t.session
-          , n = e.pointers
-          , s = n.length;
+        , n = e.pointers
+        , s = n.length;
         i.firstInput || (i.firstInput = b(e)),
         s > 1 && !i.firstMultiple ? i.firstMultiple = b(e) : 1 === s && (i.firstMultiple = !1);
         var r = i.firstInput
-          , o = i.firstMultiple
-          , a = o ? o.center : r.center
-          , l = e.center = P(n);
+        , o = i.firstMultiple
+        , a = o ? o.center : r.center
+        , l = e.center = P(n);
         e.timeStamp = gt(),
         e.deltaTime = e.timeStamp - r.timeStamp,
         e.angle = z(a, l),
@@ -175,9 +188,9 @@ setTimeout( () => {
     }
     function _(t, e) {
         var i = e.center
-          , n = t.offsetDelta || {}
-          , s = t.prevDelta || {}
-          , r = t.prevInput || {};
+        , n = t.offsetDelta || {}
+        , s = t.prevDelta || {}
+        , r = t.prevInput || {};
         e.eventType !== Pt && r.eventType !== Rt || (s = t.prevDelta = {
             x: r.deltaX || 0,
             y: r.deltaY || 0
@@ -193,8 +206,8 @@ setTimeout( () => {
         var i = t.lastInterval || e, s = e.timeStamp - i.timeStamp, r, o, a, l;
         if (e.eventType != Mt && (s > bt || i.velocity === n)) {
             var c = e.deltaX - i.deltaX
-              , h = e.deltaY - i.deltaY
-              , u = O(s, c, h);
+            , h = e.deltaY - i.deltaY
+            , u = O(s, c, h);
             o = u.x,
             a = u.y,
             r = mt(u.x) > mt(u.y) ? u.x : u.y,
@@ -253,13 +266,13 @@ setTimeout( () => {
     function M(t, e, i) {
         i || (i = Ht);
         var n = e[i[0]] - t[i[0]]
-          , s = e[i[1]] - t[i[1]];
+        , s = e[i[1]] - t[i[1]];
         return Math.sqrt(n * n + s * s)
     }
     function z(t, e, i) {
         i || (i = Ht);
         var n = e[i[0]] - t[i[0]]
-          , s = e[i[1]] - t[i[1]];
+        , s = e[i[1]] - t[i[1]];
         return 180 * Math.atan2(s, n) / Math.PI
     }
     function N(t, e) {
@@ -288,7 +301,7 @@ setTimeout( () => {
     }
     function F(t, e) {
         var i = T(t.touches)
-          , n = T(t.changedTouches);
+        , n = T(t.changedTouches);
         return e & (Rt | Mt) && (i = y(i.concat(n), "identifier", !0)),
         [i, n]
     }
@@ -299,7 +312,7 @@ setTimeout( () => {
     }
     function H(t, e) {
         var i = T(t.touches)
-          , n = this.targetIds;
+        , n = this.targetIds;
         if (e & (Pt | Ot) && 1 === i.length)
             return n[i[0].identifier] = !0,
             [i, i];
@@ -338,7 +351,7 @@ setTimeout( () => {
             };
             this.lastTouches.push(i);
             var n = this.lastTouches
-              , s = function() {
+            , s = function() {
                 var t = n.indexOf(i);
                 t > -1 && n.splice(t, 1)
             };
@@ -348,8 +361,8 @@ setTimeout( () => {
     function j(t) {
         for (var e = t.srcEvent.clientX, i = t.srcEvent.clientY, n = 0; n < this.lastTouches.length; n++) {
             var s = this.lastTouches[n]
-              , r = Math.abs(e - s.x)
-              , o = Math.abs(i - s.y);
+            , r = Math.abs(e - s.x)
+            , o = Math.abs(i - s.y);
             if (se >= r && se >= o)
                 return !0
         }
@@ -363,14 +376,14 @@ setTimeout( () => {
         if (v(t, he))
             return he;
         var e = v(t, ue)
-          , i = v(t, de);
+        , i = v(t, de);
         return e && i ? he : e || i ? e ? ue : de : v(t, ce) ? ce : le
     }
     function Z() {
         if (!oe)
             return !1;
         var e = {}
-          , i = t.CSS && t.CSS.supports;
+        , i = t.CSS && t.CSS.supports;
         return ["auto", "manipulation", "pan-y", "pan-x", "pan-x pan-y", "none"].forEach(function(n) {
             e[n] = i ? t.CSS.supports("touch-action", n) : !0
         }),
@@ -484,33 +497,33 @@ setTimeout( () => {
             r++;
         return t
     }, "extend", "Use `assign`.")
-      , Ct = a(function Ae(t, e) {
+    , Ct = a(function Ae(t, e) {
         return yt(t, e, !0)
     }, "merge", "Use `assign`.")
-      , Et = 1
-      , xt = /mobile|tablet|ip(ad|hone|od)|android/i
-      , $t = "ontouchstart"in t
-      , It = C(t, "PointerEvent") !== n
-      , wt = $t && xt.test(navigator.userAgent)
-      , At = "touch"
-      , Dt = "pen"
-      , _t = "mouse"
-      , St = "kinect"
-      , bt = 25
-      , Pt = 1
-      , Ot = 2
-      , Rt = 4
-      , Mt = 8
-      , zt = 1
-      , Nt = 2
-      , Xt = 4
-      , Yt = 8
-      , kt = 16
-      , qt = Nt | Xt
-      , Ft = Yt | kt
-      , Wt = qt | Ft
-      , Ht = ["x", "y"]
-      , Lt = ["clientX", "clientY"];
+    , Et = 1
+    , xt = /mobile|tablet|ip(ad|hone|od)|android/i
+    , $t = "ontouchstart"in t
+    , It = C(t, "PointerEvent") !== n
+    , wt = $t && xt.test(navigator.userAgent)
+    , At = "touch"
+    , Dt = "pen"
+    , _t = "mouse"
+    , St = "kinect"
+    , bt = 25
+    , Pt = 1
+    , Ot = 2
+    , Rt = 4
+    , Mt = 8
+    , zt = 1
+    , Nt = 2
+    , Xt = 4
+    , Yt = 8
+    , kt = 16
+    , qt = Nt | Xt
+    , Ft = Yt | kt
+    , Wt = qt | Ft
+    , Ht = ["x", "y"]
+    , Lt = ["clientX", "clientY"];
     I.prototype = {
         handler: function() {},
         init: function() {
@@ -529,8 +542,8 @@ setTimeout( () => {
         mousemove: Ot,
         mouseup: Rt
     }
-      , Ut = "mousedown"
-      , jt = "mousemove mouseup";
+    , Ut = "mousedown"
+    , jt = "mousemove mouseup";
     l(Y, I, {
         handler: function De(t) {
             var e = Vt[t.type];
@@ -552,25 +565,25 @@ setTimeout( () => {
         pointercancel: Mt,
         pointerout: Mt
     }
-      , Bt = {
+    , Bt = {
         2: At,
         3: Dt,
         4: _t,
         5: St
     }
-      , Zt = "pointerdown"
-      , Jt = "pointermove pointerup pointercancel";
+    , Zt = "pointerdown"
+    , Jt = "pointermove pointerup pointercancel";
     t.MSPointerEvent && !t.PointerEvent && (Zt = "MSPointerDown",
     Jt = "MSPointerMove MSPointerUp MSPointerCancel"),
     l(k, I, {
         handler: function _e(t) {
             var e = this.store
-              , i = !1
-              , n = t.type.toLowerCase().replace("ms", "")
-              , s = Gt[n]
-              , r = Bt[t.pointerType] || t.pointerType
-              , o = r == At
-              , a = g(e, t.pointerId, "pointerId");
+            , i = !1
+            , n = t.type.toLowerCase().replace("ms", "")
+            , s = Gt[n]
+            , r = Bt[t.pointerType] || t.pointerType
+            , o = r == At
+            , a = g(e, t.pointerId, "pointerId");
             s & Pt && (0 === t.button || o) ? 0 > a && (e.push(t),
             a = e.length - 1) : s & (Rt | Mt) && (i = !0),
             0 > a || (e[a] = t,
@@ -589,8 +602,8 @@ setTimeout( () => {
         touchend: Rt,
         touchcancel: Mt
     }
-      , Qt = "touchstart"
-      , te = "touchstart touchmove touchend touchcancel";
+    , Qt = "touchstart"
+    , te = "touchstart touchmove touchend touchcancel";
     l(q, I, {
         handler: function Se(t) {
             var e = Kt[t.type];
@@ -613,11 +626,11 @@ setTimeout( () => {
         touchend: Rt,
         touchcancel: Mt
     }
-      , ie = "touchstart touchmove touchend touchcancel";
+    , ie = "touchstart touchmove touchend touchcancel";
     l(W, I, {
         handler: function be(t) {
             var e = ee[t.type]
-              , i = H.call(this, t, e);
+            , i = H.call(this, t, e);
             i && this.callback(this.manager, e, {
                 pointers: i[0],
                 changedPointers: i[1],
@@ -627,11 +640,11 @@ setTimeout( () => {
         }
     });
     var ne = 2500
-      , se = 25;
+    , se = 25;
     l(L, I, {
         handler: function Pe(t, e, i) {
             var n = i.pointerType == At
-              , s = i.pointerType == _t;
+            , s = i.pointerType == _t;
             if (!(s && i.sourceCapabilities && i.sourceCapabilities.firesTouchEvents)) {
                 if (n)
                     V.call(this, e, i);
@@ -646,14 +659,14 @@ setTimeout( () => {
         }
     });
     var re = C(pt.style, "touchAction")
-      , oe = re !== n
-      , ae = "compute"
-      , le = "auto"
-      , ce = "manipulation"
-      , he = "none"
-      , ue = "pan-x"
-      , de = "pan-y"
-      , pe = Z();
+    , oe = re !== n
+    , ae = "compute"
+    , le = "auto"
+    , ce = "manipulation"
+    , he = "none"
+    , ue = "pan-x"
+    , de = "pan-y"
+    , pe = Z();
     G.prototype = {
         set: function(t) {
             t == ae && (t = this.compute()),
@@ -672,17 +685,17 @@ setTimeout( () => {
         },
         preventDefaults: function(t) {
             var e = t.srcEvent
-              , i = t.offsetDirection;
+            , i = t.offsetDirection;
             if (this.manager.session.prevented)
                 return void e.preventDefault();
             var n = this.actions
-              , s = v(n, he) && !pe[he]
-              , r = v(n, de) && !pe[de]
-              , o = v(n, ue) && !pe[ue];
+            , s = v(n, he) && !pe[he]
+            , r = v(n, de) && !pe[de]
+            , o = v(n, ue) && !pe[ue];
             if (s) {
                 var a = 1 === t.pointers.length
-                  , l = t.distance < 2
-                  , c = t.deltaTime < 250;
+                , l = t.distance < 2
+                , c = t.deltaTime < 250;
                 if (a && l && c)
                     return
             }
@@ -694,12 +707,12 @@ setTimeout( () => {
         }
     };
     var fe = 1
-      , ve = 2
-      , me = 4
-      , ge = 8
-      , Te = ge
-      , ye = 16
-      , Ce = 32;
+    , ve = 2
+    , me = 4
+    , ge = 8
+    , Te = ge
+    , ye = 16
+    , Ce = 32;
     J.prototype = {
         defaults: {},
         set: function(t) {
@@ -749,7 +762,7 @@ setTimeout( () => {
                 i.manager.emit(e, t)
             }
             var i = this
-              , n = this.state;
+            , n = this.state;
             ge > n && e(i.options.event + K(n)),
             e(i.options.event),
             t.additionalEvent && e(t.additionalEvent),
@@ -787,9 +800,9 @@ setTimeout( () => {
         },
         process: function(t) {
             var e = this.state
-              , i = t.eventType
-              , n = e & (ve | me)
-              , s = this.attrTest(t);
+            , i = t.eventType
+            , n = e & (ve | me)
+            , s = this.attrTest(t);
             return n && (i & Mt || !s) ? e | ye : n || s ? i & Rt ? e | ge : e & ve ? e | me : ve : Ce
         }
     }),
@@ -802,18 +815,18 @@ setTimeout( () => {
         },
         getTouchAction: function() {
             var t = this.options.direction
-              , e = [];
+            , e = [];
             return t & qt && e.push(de),
             t & Ft && e.push(ue),
             e
         },
         directionTest: function(t) {
             var e = this.options
-              , i = !0
-              , n = t.distance
-              , s = t.direction
-              , r = t.deltaX
-              , o = t.deltaY;
+            , i = !0
+            , n = t.distance
+            , s = t.direction
+            , r = t.deltaX
+            , o = t.deltaY;
             return s & e.direction || (e.direction & qt ? (s = 0 === r ? zt : 0 > r ? Nt : Xt,
             i = r != this.pX,
             n = Math.abs(t.deltaX)) : (s = 0 === o ? zt : 0 > o ? Yt : kt,
@@ -865,9 +878,9 @@ setTimeout( () => {
         },
         process: function(t) {
             var e = this.options
-              , i = t.pointers.length === e.pointers
-              , n = t.distance < e.threshold
-              , r = t.deltaTime > e.time;
+            , i = t.pointers.length === e.pointers
+            , n = t.distance < e.threshold
+            , r = t.deltaTime > e.time;
             if (this._input = t,
             !n || !i || t.eventType & (Rt | Mt) && !r)
                 this.reset();
@@ -939,9 +952,9 @@ setTimeout( () => {
         },
         process: function(t) {
             var e = this.options
-              , i = t.pointers.length === e.pointers
-              , n = t.distance < e.threshold
-              , r = t.deltaTime < e.time;
+            , i = t.pointers.length === e.pointers
+            , n = t.distance < e.threshold
+            , r = t.deltaTime < e.time;
             if (this.reset(),
             t.eventType & Pt && 0 === this.count)
                 return this.failTimeout();
@@ -949,7 +962,7 @@ setTimeout( () => {
                 if (t.eventType != Rt)
                     return this.failTimeout();
                 var o = this.pTime ? t.timeStamp - this.pTime < e.interval : !0
-                  , a = !this.pCenter || M(this.pCenter, t.center) < e.posThreshold;
+                , a = !this.pCenter || M(this.pCenter, t.center) < e.posThreshold;
                 this.pTime = t.timeStamp,
                 this.pCenter = t.center,
                 a && o ? this.count += 1 : this.count = 1,
@@ -1007,7 +1020,7 @@ setTimeout( () => {
         }
     };
     var Ee = 1
-      , xe = 2;
+    , xe = 2;
     ct.prototype = {
         set: function(t) {
             return Tt(this.options, t),
@@ -1056,7 +1069,7 @@ setTimeout( () => {
                 return this;
             if (t = this.get(t)) {
                 var e = this.recognizers
-                  , i = g(e, t);
+                , i = g(e, t);
                 -1 !== i && (e.splice(i, 1),
                 this.touchAction.update())
             }
@@ -1154,150 +1167,111 @@ setTimeout( () => {
     "function" == typeof define && define.amd ? define(function() {
         return lt
     }) : "undefined" != typeof module && module.exports ? module.exports = lt : t[i] = lt
-}(window, document, "Hammer"),
-$(document).ready(function() {
-    function t(t) {
-        var n = $(".side-nav").find(".is-active")
-          , s = $(".side-nav").children().index(n)
-          , r = $(".side-nav").children().length - 1
-          , o = 0;
-        "swipeup" === t.type || 40 === t.keyCode || t > 0 ? s !== r ? (o = s + 1,
-        e(o),
-        i(s, o, r)) : (e(o),
-        i(s, o, r)) : ("swipedown" === t.type || 38 === t.keyCode || 0 > t) && (0 !== s ? (o = s - 1,
-        e(o),
-        i(s, o, r)) : (o = r,
-        e(o),
-        i(s, o, r)))
-    }
-    function e(t) {
-        $(".side-nav, .outer-nav").children().removeClass("is-active"),
-        $(".side-nav").children().eq(t).addClass("is-active"),
-        $(".outer-nav").children().eq(t).addClass("is-active")
-    }
-    function i(t, e, i) {
-        $(".main-content .section").removeClass("section--is-active"),
-        $(".main-content .section").eq(e).addClass("section--is-active"),
-        $(".main-content .section").removeClass("section--next section--prev"),
-        t === i && 0 === e || 0 === t && e === i ? $(".main-content .section").children().removeClass("section--next section--prev") : e > t ? $(".main-content").children().eq(t).children().addClass("section--next") : $(".main-content").children().eq(t).children().addClass("section--prev"),
-        0 !== e && e !== i ? $(".header--cta").addClass("is-active") : $(".header--cta").removeClass("is-active")
-    }
-    function n() {
-        $(".header--nav-toggle").click(function() {
-            $(".perspective").addClass("perspective--modalview"),
-            setTimeout(function() {
-                $(".perspective").addClass("effect-rotate-left--animate")
-            }, 25),
-            $(".outer-nav, .outer-nav li, .outer-nav--return").addClass("is-vis")
+    }(window, document, "Hammer"),
+    (function() {
+        function t(t) {
+            var n = $(".side-nav").find(".is-active")
+            , s = $(".side-nav").children().index(n)
+            , r = $(".side-nav").children().length - 1
+            , o = 0;
+            "swipeup" === t.type || 40 === t.keyCode || t > 0 ? s !== r ? (o = s + 1,
+            e(o),
+            i(s, o, r)) : (e(o),
+            i(s, o, r)) : ("swipedown" === t.type || 38 === t.keyCode || 0 > t) && (0 !== s ? (o = s - 1,
+            e(o),
+            i(s, o, r)) : (o = r,
+            e(o),
+            i(s, o, r)))
+        }
+        function e(t) {
+            $(".side-nav, .outer-nav").children().removeClass("is-active"),
+            $(".side-nav").children().eq(t).addClass("is-active"),
+            $(".outer-nav").children().eq(t).addClass("is-active")
+        }
+        function i(t, e, i) {
+            $(".main-content .section").removeClass("section--is-active"),
+            $(".main-content .section").eq(e).addClass("section--is-active"),
+            $(".main-content .section").removeClass("section--next section--prev"),
+            t === i && 0 === e || 0 === t && e === i ? $(".main-content .section").children().removeClass("section--next section--prev") : e > t ? $(".main-content").children().eq(t).children().addClass("section--next") : $(".main-content").children().eq(t).children().addClass("section--prev"),
+            0 !== e && e !== i ? $(".header--cta").addClass("is-active") : $(".header--cta").removeClass("is-active")
+        }
+        function n() {
+            $(".header--nav-toggle").click(function() {
+                $(".perspective").addClass("perspective--modalview"),
+                setTimeout(function() {
+                    $(".perspective").addClass("effect-rotate-left--animate")
+                }, 25),
+                $(".outer-nav, .outer-nav li, .outer-nav--return").addClass("is-vis")
+            }),
+            $(".outer-nav--return, .outer-nav li").click(function() {
+                $(".perspective").removeClass("effect-rotate-left--animate"),
+                setTimeout(function() {
+                    $(".perspective").removeClass("perspective--modalview")
+                }, 400),
+                $(".outer-nav, .outer-nav li, .outer-nav--return").removeClass("is-vis")
+            })
+        }
+        function r() {
+            $(".work-request--information input").focusout(function() {
+                var t = $(this).val();
+                "" === t ? $(this).removeClass("has-value") : $(this).addClass("has-value"),
+                window.scrollTo(0, 0)
+            })
+        }
+        var o = !0
+        , a = null;
+        $(this).on("mousewheel DOMMouseScroll", function(e) {
+            if (!$(".outer-nav").hasClass("is-vis")) {
+                /*e.preventDefault();*/
+                var i = e.originalEvent.wheelDelta ? -e.originalEvent.wheelDelta : 20 * e.originalEvent.detail;
+                i > 50 && o ? (o = !1,
+                clearTimeout(a),
+                a = setTimeout(function() {
+                    o = !0
+                }, 800),
+                t(1)) : -50 > i && o && (o = !1,
+                clearTimeout(a),
+                a = setTimeout(function() {
+                    o = !0
+                }, 800),
+                t(-1))
+            }
         }),
-        $(".outer-nav--return, .outer-nav li").click(function() {
-            $(".perspective").removeClass("effect-rotate-left--animate"),
-            setTimeout(function() {
-                $(".perspective").removeClass("perspective--modalview")
-            }, 400),
-            $(".outer-nav, .outer-nav li, .outer-nav--return").removeClass("is-vis")
-        })
-    }
-    function s() {
-        $(".slider--prev, .slider--next").click(function() {
-            var t = $(this)
-              , e = $(".slider").find(".slider--item-left")
-              , i = $(".slider").children().index(e)
-              , n = $(".slider").find(".slider--item-center")
-              , s = $(".slider").children().index(n)
-              , r = $(".slider").find(".slider--item-right")
-              , o = $(".slider").children().index(r)
-              , a = $(".slider").children().length
-              , l = $(".slider--item-left")
-              , c = $(".slider--item-center")
-              , h = $(".slider--item-right")
-              , u = $(".slider--item");
-            $(".slider").animate({
-                opacity: 0
-            }, 400),
-            setTimeout(function() {
-                t.hasClass("slider--next") ? a - 1 > i && a - 1 > s && a - 1 > o ? (l.removeClass("slider--item-left").next().addClass("slider--item-left"),
-                c.removeClass("slider--item-center").next().addClass("slider--item-center"),
-                h.removeClass("slider--item-right").next().addClass("slider--item-right")) : i === a - 1 ? (u.removeClass("slider--item-left").first().addClass("slider--item-left"),
-                c.removeClass("slider--item-center").next().addClass("slider--item-center"),
-                h.removeClass("slider--item-right").next().addClass("slider--item-right")) : s === a - 1 ? (l.removeClass("slider--item-left").next().addClass("slider--item-left"),
-                u.removeClass("slider--item-center").first().addClass("slider--item-center"),
-                h.removeClass("slider--item-right").next().addClass("slider--item-right")) : (l.removeClass("slider--item-left").next().addClass("slider--item-left"),
-                c.removeClass("slider--item-center").next().addClass("slider--item-center"),
-                u.removeClass("slider--item-right").first().addClass("slider--item-right")) : 0 !== i && 0 !== s && 0 !== o ? (l.removeClass("slider--item-left").prev().addClass("slider--item-left"),
-                c.removeClass("slider--item-center").prev().addClass("slider--item-center"),
-                h.removeClass("slider--item-right").prev().addClass("slider--item-right")) : 0 === i ? (u.removeClass("slider--item-left").last().addClass("slider--item-left"),
-                c.removeClass("slider--item-center").prev().addClass("slider--item-center"),
-                h.removeClass("slider--item-right").prev().addClass("slider--item-right")) : 0 === s ? (l.removeClass("slider--item-left").prev().addClass("slider--item-left"),
-                u.removeClass("slider--item-center").last().addClass("slider--item-center"),
-                h.removeClass("slider--item-right").prev().addClass("slider--item-right")) : (l.removeClass("slider--item-left").prev().addClass("slider--item-left"),
-                c.removeClass("slider--item-center").prev().addClass("slider--item-center"),
-                u.removeClass("slider--item-right").last().addClass("slider--item-right"))
-            }, 400),
-            $(".slider").animate({
-                opacity: 1
-            }, 400)
-        })
-    }
-    function r() {
-        $(".work-request--information input").focusout(function() {
-            var t = $(this).val();
-            "" === t ? $(this).removeClass("has-value") : $(this).addClass("has-value"),
-            window.scrollTo(0, 0)
-        })
-    }
-    var o = !0
-      , a = null;
-    $(this).on("mousewheel DOMMouseScroll", function(e) {
-        if (!$(".outer-nav").hasClass("is-vis")) {
-            /*e.preventDefault();*/
-            var i = e.originalEvent.wheelDelta ? -e.originalEvent.wheelDelta : 20 * e.originalEvent.detail;
-            i > 50 && o ? (o = !1,
-            clearTimeout(a),
-            a = setTimeout(function() {
-                o = !0
-            }, 800),
-            t(1)) : -50 > i && o && (o = !1,
-            clearTimeout(a),
-            a = setTimeout(function() {
-                o = !0
-            }, 800),
-            t(-1))
-        }
-    }),
-    $(".side-nav li, .outer-nav li").click(function() {
-        if (!$(this).hasClass("is-active")) {
-            var t = $(this)
-              , n = t.parent().find(".is-active")
-              , s = t.parent().children().index(n)
-              , r = t.parent().children().index(t)
-              , o = $(this).parent().children().length - 1;
-            e(r),
-            i(s, r, o)
-        }
-    }),
-    $(".cta").click(function() {
-        var t = $(".side-nav").find(".is-active")
-          , n = $(".side-nav").children().index(t)
-          , s = $(".side-nav").children().length - 1
-          , r = s;
-        e(s),
-        i(n, r, s)
-    });
-    var l = document.getElementById("viewport")
-      , c = new Hammer(l);
-    c.get("swipe").set({
-        direction: Hammer.DIRECTION_VERTICAL
-    }),
-    c.on("swipeup swipedown", function(e) {
-        t(e)
-    }),
-    $(document).keyup(function(e) {
-        $(".outer-nav").hasClass("is-vis") || (e.preventDefault(),
-        t(e))
-    }),
-    n(),
-    s(),
-    r()
-})
-}, 5000);
+        $(".side-nav li, .outer-nav li").click(function() {
+            if (!$(this).hasClass("is-active")) {
+                var t = $(this)
+                , n = t.parent().find(".is-active")
+                , s = t.parent().children().index(n)
+                , r = t.parent().children().index(t)
+                , o = $(this).parent().children().length - 1;
+                e(r),
+                i(s, r, o)
+            }
+        }),
+        $(".cta").click(function() {
+            var t = $(".side-nav").find(".is-active")
+            , n = $(".side-nav").children().index(t)
+            , s = $(".side-nav").children().length - 1
+            , r = s;
+            e(s),
+            i(n, r, s)
+        });
+        var l = document.getElementById("viewport")
+        , c = new Hammer(l);
+        c.get("swipe").set({
+            direction: Hammer.DIRECTION_VERTICAL
+        }),
+        c.on("swipeup swipedown", function(e) {
+            t(e)
+        }),
+        $(document).keyup(function(e) {
+            $(".outer-nav").hasClass("is-vis") || (e.preventDefault(),
+            t(e))
+        }),
+        n(),
+        r()
+    })();
+}
+
+
+fTmin();
