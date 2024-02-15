@@ -1,0 +1,267 @@
+.mouth,.sun .eye{
+    animation-iteration-count:infinite;
+    animation-timing-function:ease-out
+}
+#header{
+    width:100%;
+    height:100vh;
+    position:absolute
+}
+.toast-container{
+    width:100%;
+    margin:0 auto;
+    height:200px;
+    position:fixed;
+    overflow:hidden;
+    bottom:0;
+    z-index:10
+}
+.toast-container .alert{
+    transform:translateY(130%);
+    transition:.2s
+}
+.toast-container.alert-is-shown .alert{
+    transition:.25s ease-out;
+    transform:translateY(0);
+    opacity:1
+}
+.alert{
+    width:50%;
+    height:60px;
+    left:25%;
+    bottom:70px;
+    background:rgba(255,255,255,.7);
+    color:#000;
+    border-radius:15px;
+    opacity:0;
+    box-shadow:0 5px 15px rgba(black,.2);
+    position:absolute;
+    text-align:center;
+    z-index:10
+}
+#planet-container{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    -moz-transition:height 2s ease-in-out;
+    -webkit-transition:height 2s ease-in-out;
+    -ms-transition:height 2s ease-in-out;
+    transition:height 2s ease-in-out;
+    display:-moz-flex;
+    display:-webkit-flex;
+    display:-ms-flex;
+    display:flex;
+    -moz-justify-content:center;
+    -webkit-justify-content:center;
+    -ms-justify-content:center;
+    justify-content:center;
+    -moz-align-items:center;
+    -webkit-align-items:center;
+    -ms-align-items:center;
+    align-items:center;
+    display:-ms-flexbox;
+    -ms-flex-align:center;
+    -ms-flex-pack:center;
+    background:rgba(254,254,254,.85);
+    z-index:1001
+}
+#wrapper,.planet{
+    margin:0 auto;
+    position:relative
+}
+#planet-container.bottom{
+    bottom:0;
+    height:0
+}
+#planet-container.bottom.day{
+    bottom:5rem!important;
+    height:0
+}
+#planet-container.move-up{
+    bottom:0;
+    height:100vh
+}
+#planet-container.top{
+    top:-2rem;
+    height:0
+}
+#nightbg:before,.planet{
+    width:200px;
+    height:200px
+}
+#planet-container.show{
+    opacity:1!important
+}
+#planet-container.hide{
+    opacity:0;
+    transition:opacity 5s ease-in-out
+}
+#wrapper{
+    max-width:500px;
+    height:400px;
+    margin-top:calc(50vh - 200px)
+}
+.planet{
+    background-color:#ebf3fe;
+    display:block;
+    border-radius:50%;
+    box-shadow:inset -40px 0 0 #d8e8f7,inset 20px 0 0 #fff,inset -50px 0 0 20px #e2eefa,0 0 0 20px rgba(255,255,255,.05),0 0 0 40px rgba(255,255,255,.025),0 0 0 60px rgba(255,255,255,.0125);
+    border:10px solid;
+    transition:.2s ease-in
+}
+.mouth,.sun .eye,.sun .mouth{
+    display:block;
+    margin-right:10px
+}
+.planet:after{
+    content:"";
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background-color:#d8e8f7;
+    position:absolute;
+    top:20%;
+    left:20%;
+    box-shadow:40px -20px 0 -10px #d8e8f7,40px 10px 0 -15px #d8e8f7
+}
+#nightbg,.sun .mouth{
+    background-color:transparent
+}
+.face{
+    position:absolute;
+    width:100px;
+    top:50%;
+    left:40%
+}
+.eye,.mouth,.sun .eye,.sun .mouth{
+    float:left;
+    position:relative
+}
+.sun .mouth{
+    margin-top:15px;
+    height:15px;
+    width:15px;
+    border-radius:0 0 50% 50%;
+    border:6px solid #151843;
+    border-top:0;
+    margin-left:0;
+    animation-name:none
+}
+.mouth{
+    margin-top:15px;
+    height:25px;
+    width:25px;
+    border-radius:50%;
+    background-color:#151843;
+    border:none;
+    border-top:0;
+    margin-left:2px;
+    animation-name:mouth-sleep;
+    animation-duration:5s
+}
+.eye,.sun .eye,.sun .eye-in{
+    width:20px;
+    height:20px
+}
+.sun .eye-in,.sun .mouth:after,.sun .mouth:before{
+    background-color:#151843;
+    border-radius:50%;
+    content:""
+}
+.sun .mouth:after{
+    width:6px;
+    height:6px;
+    position:absolute;
+    display:block;
+    top:-3px;
+    left:-6px
+}
+.sun .mouth:before{
+    width:6px;
+    height:6px;
+    position:absolute;
+    display:block;
+    top:-3px;
+    left:15px
+}
+.sun .eye{
+    animation-name:eye-blink;
+    animation-duration:10s;
+    overflow:hidden
+}
+.eye-in,.sun .eye-in{
+    display:block;
+    position:absolute
+}
+.eye{
+    display:block;
+    margin-right:8px
+}
+.sun .eye-in{
+    top:0;
+    left:0;
+    transform:scale(1,1)!important;
+    border:none
+}
+.eye-in{
+    width:15px;
+    height:8px;
+    top:5px;
+    left:-1px;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    border:5px solid #151843;
+    border-top:0
+}
+#nightbg,#nightbg:before{
+    border-radius:50%;
+    position:absolute
+}
+@keyframes eye-blink{
+    0%,4%{
+        transform:scale(1,1)
+    }
+    2%{
+        transform:scale(1,0)
+    }
+}
+@keyframes mouth-sleep{
+    0%,75%{
+        transform:scale(1,1)
+    }
+    35%,40%{
+        transform:scale(.7,.7)
+    }
+}
+@keyframes wiggle{
+    0%,100%{
+        transform:translate(0,0)
+    }
+    50%{
+        transform:translate(50px,0)
+    }
+}
+.sun .planet{
+    background-color:#ffdb01!important;
+    box-shadow:inset -40px 0 0 #ff8603,inset 20px 0 0 #fff,inset -50px 0 0 20px #ffd201,0 0 0 20px rgba(255,210,1,.2),0 0 0 40px rgba(255,210,1,.1),0 0 0 60px rgba(255,210,1,.05)
+}
+.sun .planet:after{
+    background-color:#ffd201;
+    box-shadow:40px -20px 0 -10px #ffd201,40px 10px 0 -15px #ffd201
+}
+#nightbg{
+    width:100px;
+    height:100px;
+    top:100px;
+    left:calc(50% - 50px);
+    transition:.7s
+}
+#nightbg:before{
+    content:"";
+    background-color:rgba(173,216,230,.1);
+    left:-50px;
+    top:-50px
+}
+.sun #nightbg{
+    transform:scale(30)
+}

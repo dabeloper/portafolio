@@ -1,0 +1,59 @@
+{
+    "copyright": "DABELOPER",
+    "device-notification": "This site has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed ;).",
+    "navbar" : {
+        "home": "Home",
+        "skills": "Skills",
+        "works": "Works",
+        "check": "Checklist",
+        "pingMe": "Ping me"
+    },
+    "home" : {
+        "hello": "Hello",
+        "pingMe": "Ping me",
+        "welcome": "Welcome",
+        "typings": {
+            "one": "Welcome to my site",
+            "two": "let's get to know my Dev side",
+            "three": "I'm always looking for impressive challenges",
+            "four": "I'm always looking for amazing projects",
+            "five": "Always ready for any new code-adventure",
+            "six": "By the way...",
+            "seven": "I'm David"
+        },
+        "titleHomeOption1": "I'm From Colombia ",
+        "subtitleHomeOption": "The Country of magical places, sculptural <i title='sun'>Sunsets</i> and beautiful <i title='moon'>Moons</i>.",
+        "subtitle1HomeOption1": "It seems like you are visiting me from {{country}}",
+        "subtitleCoolPlaceHomeOption1": "[Cool place! ;)]",
+        "subtitleSamePlaceHomeOption1": "[OMG!!! We're COLOMBIANOS! What's up!?",
+        "subtitle2HomeOption1": "Anyway... I changed the language of the entire site to English to understand each other better.",
+        "titleHomeOption2": "Nerd Fact",
+        "subtitleHomeOption2": "The word \"technology\" is broken down into \"logos\" and \"techno\", which comes from the Greek τέχνη whose translation is technique, art or skill (how crazy, right!?), hence my belief that application development is an art, and as in all good art, the artist will take his time for his masterpiece.",
+        "titleHomeOption3": "I would like to say...",
+        "subtitleHomeOption3": "I'm a hiker, bookreader, amateur photographer... and dev self-taught. \nI always try to put a little of that in each line of code that I draw, in short... \nI'm just a little of everything that I've found on my path and hiking is my passion..."
+    },
+    "skills" : {
+        "techSkills": "MY TECH SKILLS",
+        "typings" : {
+            "one": "Select<br>a skill<br>⇩⇩⇩"
+        }
+    },
+    "works" : {
+        "myWorks": "My Works",
+        "readMore": "(CLICK TO READ MORE)"
+    },
+    "check" : {
+        "looking": "You are looking for",
+        "checkIt": "Check It",
+        "checkAgain": "Check Again",
+        "checking": "Checking...^1000",
+        "typings" : {
+            "one": "Your search is over",
+            "two": "Let's talk"
+        }
+    },
+    "pingMe" : {
+        "address": "Cali, Colombia",
+        "contactMe": "Contact Me"
+    }
+}

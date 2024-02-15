@@ -1,0 +1,59 @@
+{
+    "copyright": "DABELOPER",
+    "device-notification": "Este sitio no tiene mucho que ofrecerte en esta resolución :'(. Cambia la orientación del dispositivo. No te arrepenntiras ;).",
+    "navbar" : {
+        "home": "Inicio",
+        "skills": "Habilidades",
+        "works": "Trabajos",
+        "check": "CheckList",
+        "pingMe": "Contacto"
+    },
+    "home" : {
+        "hello": "Hola",
+        "pingMe": "Hablemos",
+        "welcome": "Bienvenido",
+        "typings": {
+            "one": "Bienvenido a mi sitio",
+            "two": "Te invito a conocer mi lado Dev",
+            "three": "Siempre listo para novedosos retos",
+            "four": "Siempre listo para proyectos alucinantes",
+            "five": "Siempre listo para nuevas codigo-aventuras",
+            "six": "Por cierto...",
+            "seven": "Soy David"
+        },
+        "titleHomeOption1": "Soy COLOMBIANO ",
+        "subtitleHomeOption": "El País de los lugares magicos, esculturales <i title='sun'>Atardeceres</i> y de <i title='moon'>Lunas</i> llenas.",
+        "subtitle1HomeOption1": "Parece que me estas visitando desde {{country}}",
+        "subtitleCoolPlaceHomeOption1": "[Maravilloso lugar! ;)]",
+        "subtitleSamePlaceHomeOption1": "... Que mundo tan pequeño!! Pasate por mi LinkedIn ;D.",
+        "subtitle2HomeOption1": "Como sea... Cambie el idioma del sitio a Español para que nos entendamos mejor.",
+        "titleHomeOption2": "Hecho curioso",
+        "subtitleHomeOption2": " la palabra tecnología se desglosa en logos y tecno, la cual proviene del griego τέχνη cuya traduccion es tecnica, arte o destreza (que loco, cierto!?), de allí mi creencia a que el desarrollo de aplicaciones es un arte, y como en todo buen arte, el artista se tomara su tiempo para su obra maestra.",
+        "titleHomeOption3": "Unas cortas palabras del autor...",
+        "subtitleHomeOption3": "soy senderista, aventurero, fotografo aficionado y autodidacta, lo que me ha llevado a trabajar muchos proyectos en solitario y otros tantos en equipos asombrosos; en conclusión, solo soy un poco de todo lo que he encontrado en mi camino y caminar es mi pasión..."
+    },
+    "skills" : {
+        "techSkills": "MIS HABILIDADES TÉCNICAS",
+        "typings" : {
+            "one": "Selecciona<br>una habilidad<br>⇩⇩⇩"
+        }
+    },
+    "works" : {
+        "myWorks": "Mis Trabajos",
+        "readMore": "(HAGA CLIC PARA LEER MÁS)"
+    },
+    "check" : {
+        "looking": "Selecciona que buscas",
+        "checkIt": "Validar",
+        "checkAgain": "Validar de nuevo",
+        "checking": "Validando...^1000",
+        "typings" : {
+            "one": "Tú busqueda ha terminado",
+            "two": "Contactame!"
+        }
+    },
+    "pingMe" : {
+        "address": "Santiago de Cali, Colombia",
+        "contactMe": "Contactame"
+    }
+}
