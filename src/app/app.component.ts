@@ -39,8 +39,11 @@ export class AppComponent {
   navbarType = NavbarType;
 
   constructor(dabeloper: DabeloperService, cookie: CookieService) {
-    const DCookie = cookie.getCookie(environment.cookie.name);
-    const DLStorage = localStorage.getItem(environment.cookie.name);
+    let DCookie, DLStorage;
+    try {  
+      DCookie = cookie.getCookie(environment.cookie.name);
+      DLStorage = localStorage.getItem(environment.cookie.name);
+    } catch (e) {}
     if ( !!DCookie && !!DLStorage && parseInt(DCookie) > 90 ) {
       dabeloper.setData(JSON.parse(DLStorage));
     } else {

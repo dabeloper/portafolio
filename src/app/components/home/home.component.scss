@@ -98,7 +98,7 @@
 .home-banner img {
     position: absolute;
     bottom: 21px;
-    right: -12px
+    right: -12px;
 }
 
 .home-options {
@@ -225,5 +225,12 @@
 .home-card-left {
     p:nth-child(2) {
         margin-top: 0;
+    }
+}
+@media (max-height: 750px) {
+
+    .home-banner img {
+        max-height: 80%;
+        max-width: 30%;
     }
 }

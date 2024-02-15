@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom  } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, isDevMode  } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import {
   ScreenTrackingService,
@@ -19,6 +19,7 @@ import { routes } from './app.routes';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { provideServiceWorker } from '@angular/service-worker';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -28,31 +29,30 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     importProvidersFrom([
-      provideFirebaseApp(() => initializeApp(environment.firebase)),
-      provideAnalytics(() => getAnalytics()),
-      provideAuth(() => getAuth()),
-      provideFirestore(() => getFirestore()),
-      provideFunctions(() => getFunctions()),
-      provideMessaging(() => getMessaging()),
-      providePerformance(() => getPerformance()),
-      provideStorage(() => getStorage()),
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideAnalytics(() => getAnalytics()),
+        provideAuth(() => getAuth()),
+        provideFirestore(() => getFirestore()),
+        provideFunctions(() => getFunctions()),
+        provideMessaging(() => getMessaging()),
+        providePerformance(() => getPerformance()),
+        provideStorage(() => getStorage()),
     ]),
     importProvidersFrom(HttpClientModule),
-    importProvidersFrom
-    (
-      TranslateModule.forRoot(
-      {
-          loader : 
-          { 
-            provide : TranslateLoader , 
-            useFactory : createTranslateLoader , 
-            deps : [HttpClient]
-          },
-          defaultLanguage : 'en'
-      })
-    ),
+    importProvidersFrom(TranslateModule.forRoot({
+        loader: {
+            provide: TranslateLoader,
+            useFactory: createTranslateLoader,
+            deps: [HttpClient]
+        },
+        defaultLanguage: 'en'
+    })),
     ScreenTrackingService,
     UserTrackingService,
-    AnalyticsModule
-  ],
+    AnalyticsModule,
+    provideServiceWorker('ngsw-worker.js', {
+        enabled: !isDevMode(),
+        registrationStrategy: 'registerWhenStable:30000'
+    }),
+],
 };

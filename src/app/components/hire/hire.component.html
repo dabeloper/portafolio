@@ -1,8 +1,9 @@
 <li class="l-section section">
     <div class="hire">
       <canvas #confetti
-              [width]="viewWidth"
-              [height]="viewHeight"></canvas>
+              [width]="conffetiAnimation ? viewWidth : 0"
+              [height]="conffetiAnimation ? viewHeight : 0">
+      </canvas>
       <h2 *ngIf="!!typings">
         <span *ngIf="!showTryAgain">
           {{ "check.looking" | translate }}

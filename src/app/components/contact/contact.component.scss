@@ -123,3 +123,13 @@
     color: #fff;
     font-weight: 700
 }
+
+@media (max-width: 600px) {
+    .map-container {
+        display: none;
+    }
+    .contact--lockup {
+        margin: 15%;
+        background-color: transparent;
+    }
+}
